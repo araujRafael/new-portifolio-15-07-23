@@ -15,7 +15,7 @@ export default function Contact() {
       <form
         action={`https://formsubmit.co/${MY_EMAIL}`}
         method="post"
-        className="w-[480px] max-w-[480px] px-8 flex flex-col gap-2"
+        className="min-w-[280px] max-w-[480px] px-8 flex flex-col gap-2"
       >
         {/* hidden */}
         {/* <InputLabel

@@ -26,7 +26,7 @@ export default async function Home() {
             className="rounded-full"
           />
           <div>
-            <h1 className="font-extrabold text-[2rem] sm:text-4xl">
+            <h1 className="font-extrabold text-[1.3rem] sm:text-4xl">
               {"Hello, I'am Rafael Diniz;"}
             </h1>
             <h1 className="text-primary-900 text-[1em] sm:text-2xl">
