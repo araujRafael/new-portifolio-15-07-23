@@ -6,6 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-900: rgb(13, 204, 218);
+  --primary-700: rgb(126, 230, 238);
+  --secondary-900: rgb(241, 0, 52);
+  --secondary-700: rgb(226, 27, 87);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,7 +20,7 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +28,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
