@@ -17,7 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-black text-white font-srcCode'>
+
+      <body className={`bg-black text-white --font-srcCode`}>
         <ChackraProviders>
           <LayoutPage>
             {children}

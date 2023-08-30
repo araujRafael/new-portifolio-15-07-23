@@ -41,7 +41,7 @@ export default async function Projects() {
 									{/* gradient-to-l to-black from-[rgba(0,0,0,0.67)] */}
 									<Image
 										key={i.toString()}
-										src={fields.image[0].thumbnails.full.url}
+										src={fields.image[0]?.thumbnails?.full?.url}
 										alt={'logo'}
 										width={200}
 										height={200}

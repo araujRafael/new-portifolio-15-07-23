@@ -21,7 +21,7 @@ export async function getAirTableData<T=unknown>
             next: {
               revalidate: 1
             }
-          }); // tblLZ7nOF95nDsIEr
+          }); 
         if(!data.ok) console.log(data.text())
         const json: RecordAirtable<T> = await data.json()
         return  json.records
