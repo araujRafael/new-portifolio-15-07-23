@@ -3,6 +3,7 @@ import { ChackraProviders } from '@/components/ChackraProviders'
 import { LayoutPage } from '@/components/Atom/LayoutPage'
 import './globals.css'
 
+
 export const metadata: Metadata = {
   title: {
     template: '%s | Rafael Diniz;',
@@ -16,9 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-
-      <body className={`bg-black text-white --font-srcCode`}>
+    <html lang="en" >
+      <body className={`bg-black text-white --font-fira`}>
         <ChackraProviders>
           <LayoutPage>
             {children}

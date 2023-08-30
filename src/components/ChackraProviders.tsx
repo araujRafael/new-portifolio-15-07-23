@@ -2,9 +2,14 @@
 'use client'
 import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import { Source_Code_Pro } from 'next/font/google'
-
-const srcCode = Source_Code_Pro({ subsets: ['latin-ext'] })
+import { Fira_Code } from 'next/font/google'
+const fira = Fira_Code({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  variable: '--font-fira',
+  preload: true,
+  fallback: ['--font-fira']
+})
 const colors = {
   brand: {
     900: '#1a365d',
@@ -13,8 +18,8 @@ const colors = {
   },
 }
 const fonts = {
-  heading: 'var(--font-srcCode)',
-  body: 'var(--font-srcCode)',
+  heading: 'var(--font-fira)',
+  body: 'var(--font-fira)',
 }
 
 const theme = extendTheme({ colors, fonts })
@@ -28,13 +33,13 @@ export function ChackraProviders({
       <style jsx global>
         {`
           :root {
-            --font-srcCode: ${srcCode.style.fontFamily};
+            --font-fira: ${fira.style.fontFamily};
           }
         `}
       </style>
       <CacheProvider>
         <ChakraProvider theme={theme} >
-          <main>
+          <main className='--font-fira font-mono'>
             {children}
           </main>
         </ChakraProvider>
