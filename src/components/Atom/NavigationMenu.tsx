@@ -1,12 +1,9 @@
 'use client'
 import { menuLinks } from "@/constants/menu"
-import useDocument from "@/hooks/useDocument"
 import { Box, Collapse, Container, Icon, Slide, Stack, useDisclosure } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
 import useScrollPosition from '@react-hook/window-scroll'
 import { BiMenu } from "react-icons/bi"
 import { Link } from "@chakra-ui/next-js"
-import useWindow from "@/hooks/useWindow"
 import { usePathname } from "next/navigation"
 
 interface NavigationMenuProps {
@@ -15,12 +12,11 @@ interface NavigationMenuProps {
 export const NavigationMenu: React.FC<NavigationMenuProps> = ({
 }) => {
 	let pathname = usePathname()
-	const window = useWindow()
-	const hrefRegex = /(#\w{0,})/gm
-	const { href } = window.location
-	const getHref = hrefRegex.exec(href)?.[0]
-	const inHef = (id: string) => getHref === id
-	const scrollY = useScrollPosition()
+	let { href } = window.location
+	let hrefRegex = /(#\w{0,})/gm
+	let getHref = hrefRegex.exec(href)?.[0]
+	let inHef = (id: string) => getHref === id
+	let scrollY = useScrollPosition()
 	// State ***************************************************************
 	const { isOpen, onToggle } = useDisclosure()
 
