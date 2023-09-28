@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ myStack, id }) => {
                     fontWeight={'semibold'}
                     whiteSpace={'nowrap'}
                   >
-                    {"Hello, I'am"} {' '}
+                    {"Hello, I'm"} {' '}
                     {"Rafael Diniz;"}
                   </Text>
                   {/* Subtitle */}
@@ -105,7 +105,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ myStack, id }) => {
             <Text
               fontWeight={'semibold'}
               fontSize={[16, 20]} textAlign={'center'} >
-              Aboute me
+              About me
             </Text>
             <Text fontWeight={'light'} textAlign={'center'} >
               {`I'm a freelance developer with over 3 years of experience.
