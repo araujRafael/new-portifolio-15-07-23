@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ myStack, id }) => {
                     fontWeight={'semibold'}
                     whiteSpace={'nowrap'}
                   >
-                    Hello, I'am {' '}
+                    {"Hello, I'am"} {' '}
                     {"Rafael Diniz;"}
                   </Text>
                   {/* Subtitle */}
@@ -85,7 +85,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ myStack, id }) => {
                 >
                   {
                     Network.map((x, i) => (
-                      <Link href={x.href}
+                      <Link key={i.toString()} href={x.href}
                         target='_blank'
                         _hover={{
                           color: 'primary.700',
@@ -108,10 +108,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ myStack, id }) => {
               Aboute me
             </Text>
             <Text fontWeight={'light'} textAlign={'center'} >
-              I'm a freelance developer with over 3 years of experience.
+              {`I'm a freelance developer with over 3 years of experience.
               I started learning java mobile, but I really
               liked the ease and versatility that javascript
-              has in various environments.
+              has in various environments.`}
             </Text>
           </Stack>
         </Stack>
@@ -138,6 +138,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ myStack, id }) => {
                 src={image[0].thumbnails['large'].url}
                 m={'auto'}
                 borderRadius={5}
+                alt='cover project'
               />
               <Text
                 fontSize={[12.5, 14, 16]}

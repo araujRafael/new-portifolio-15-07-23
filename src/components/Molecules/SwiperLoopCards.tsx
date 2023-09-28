@@ -47,7 +47,9 @@ function SwiperLoopCards<T extends unknown>(
             w-full flex flex-row !justify-center !items-center
           `}
         >
-          {renderItems(x)}
+          <div key={i.toString()} >
+            {renderItems(x)}
+          </div>
         </SwiperSlide>
       ))
     }

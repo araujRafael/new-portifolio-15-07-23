@@ -83,7 +83,7 @@ export const NavigationMenu: React.FC<NavigationMenuProps> = ({
 						as={'ul'} flexDir={'row'} gap={5} className="links">
 						{
 							menuLinks.map((x, i) => (
-								<Box as="li"
+								<Box key={i.toString()} as="li"
 									position={'relative'}
 									display={'flex'} justifyContent={'center'} >
 									<Link href={x.href} className={

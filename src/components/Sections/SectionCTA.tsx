@@ -27,6 +27,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({ }) => {
           <Image src='/images/logo.png'
             w={[120, 250]}
             h={'auto'}
+            alt='logo'
           />
         </Stack>
         <Stack
