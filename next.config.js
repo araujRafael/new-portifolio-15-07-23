@@ -17,7 +17,9 @@ const nextConfig = {
         ],
     },
     env:{
-        AIRTABLE_SECRET_API_TOKEN: process.env.AIRTABLE_SECRET_API_TOKEN
+        AIRTABLE_SECRET_API_TOKEN: process.env.AIRTABLE_SECRET_API_TOKEN,
+        MY_EMAIL:process.env.MY_EMAIL,
+        NEXT_URL:process.env.NEXT_URL
     },
     experimental:{
         serverActions:true

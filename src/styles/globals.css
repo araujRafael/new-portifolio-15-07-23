@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary-900: rgb(13, 204, 218);
+  --primary-700: rgb(126, 230, 238);
+  --secondary-900: rgb(241, 0, 52);
+  --secondary-700: rgb(226, 27, 87);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html{
+  scroll-behavior: smooth !important;
+}
+
+::-webkit-scrollbar{
+  background: #444;
+  width: 6px;
+}
+::-webkit-scrollbar-thumb{
+  background: #949494;
+  width: 6px;
+  border-radius: 6px;
+}
+@media screen and (max-width: 760px) {
+  ::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+/* Swipper */
+.swiper-pagination-bullet-active{
+  width: 14px !important;
+  height: 14px !important;
+  background-color: white !important;
+  border: 1px solid black;
+}
+.swiper-button-prev::after{
+  color: var(--primary-900) !important;
+}
+.swiper-button-next::after{
+  color: var(--primary-900) !important;
+}

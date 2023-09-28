@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        mono:['var(--font-fira)']
+        fira:['var(--font-fira)']
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -23,6 +23,11 @@ module.exports = {
         secondary:{
           900:'var(--secondary-900)'
         }
+      },
+      boxShadow:{
+        sm:'0px 3px 12px 3px rgba(0,0,0,0.15)',
+        md:'0px 3px 12px 3px rgba(0,0,0,0.6)',
+        lg:'0px 3px 12px 3px rgba(0,0,0,0.9)',
       }
     },
   },

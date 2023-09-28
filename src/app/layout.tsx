@@ -1,8 +1,18 @@
 import type { Metadata } from 'next'
-import { ChackraProviders } from '@/components/ChackraProviders'
-import { LayoutPage } from '@/components/Atom/LayoutPage'
-import './globals.css'
-
+import Providers from './Providers'
+// Style
+import '../styles/globals.css'
+// Fonts
+import { Fira_Code } from 'next/font/google'
+import Body from '@/components/Atom/Body'
+import Html from '@/components/Atom/Html'
+const fira = Fira_Code({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-fira',
+  preload: true,
+  fallback: ['--font-fira']
+})
 
 export const metadata: Metadata = {
   title: {
@@ -17,14 +27,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" >
-      <body className={`bg-black text-white --font-fira`}>
-        <ChackraProviders>
-          <LayoutPage>
-            {children}
-          </LayoutPage>
-        </ChackraProviders>
-      </body>
-    </html>
+    <Html >
+      <Body font={fira} >
+        <Providers>
+          {children}
+        </Providers>
+      </Body>
+    </Html>
   )
 }
