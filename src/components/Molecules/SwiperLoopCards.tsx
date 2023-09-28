@@ -43,13 +43,12 @@ function SwiperLoopCards<T extends unknown>(
     {
       data?.map((x, i) => (
         <SwiperSlide
+          key={i.toString()}
           className={`
             w-full flex flex-row !justify-center !items-center
           `}
         >
-          <div key={i.toString()} >
-            {renderItems(x)}
-          </div>
+          {renderItems(x)}
         </SwiperSlide>
       ))
     }

@@ -140,7 +140,7 @@ export const NavigationMenu: React.FC<NavigationMenuProps> = ({
 							justifyContent={'center'} gap={6}
 						>
 							{menuLinks.map((x, i) => (
-								<Box as="li"
+								<Box key={i.toString()} as="li"
 									position={'relative'}
 									display={'flex'} justifyContent={'center'}
 									flex={'row'} alignItems={'center'} gap={2}
