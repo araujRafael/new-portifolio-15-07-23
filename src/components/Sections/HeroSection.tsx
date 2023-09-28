@@ -29,7 +29,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ myStack, id }) => {
-  return <Section>
+  return <Section id={id} >
     <Container h={'full'}>
       <Stack
         w={'full'} h={'full'}

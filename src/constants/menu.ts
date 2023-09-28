@@ -1,14 +1,14 @@
 export const menuLinks = [
   {
     name:'Profile',
-    href:'#hero'
+    hash:'#hero'
   },
   {
     name:'Projects',
-    href:'#projects'
+    hash:'#projects'
   },
   {
     name:'Contact',
-    href:'#contact'
+    hash:'#contact'
   },
 ]

@@ -18,9 +18,6 @@ export async function getAirTableData<T=unknown>
               Authorization: `Bearer ${token}`,
             },
             cache: 'no-cache',
-            next: {
-              revalidate: 1
-            }
           }); 
         if(!data.ok) console.log(data.text())
         const json: RecordAirtable<T> = await data.json()

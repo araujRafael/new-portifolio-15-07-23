@@ -22,7 +22,7 @@ export default async function Home() {
     <>
       <HeroSection myStack={myStack} id="hero" />
       <SectionCTA id="cta" />
-      <ProjectsSection id="projects" projects={projects} />
+      <ProjectsSection projects={projects} id="projects" />
       <ContactSection id="contact" />
     </>
   )

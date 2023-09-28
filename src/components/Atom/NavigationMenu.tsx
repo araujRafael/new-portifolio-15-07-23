@@ -5,25 +5,25 @@ import useScrollPosition from '@react-hook/window-scroll'
 import { BiMenu } from "react-icons/bi"
 import { Link } from "@chakra-ui/next-js"
 import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
+import { useSectionObserver } from "@/contexts/SectionObserver"
 
 interface NavigationMenuProps {
 }
 
 export const NavigationMenu: React.FC<NavigationMenuProps> = ({
 }) => {
+	const { hash, setHash } = useSectionObserver()
 	let pathname = usePathname()
-	let { href } = window.location
-	let hrefRegex = /(#\w{0,})/gm
-	let getHref = hrefRegex.exec(href)?.[0]
-	let inHef = (id: string) => getHref === id
+	// let hashRegex = /(#\w{0,})/gm
+	// let getHash = hashRegex.exec(hash)?.[0]
+	let inHash = (id: string) => hash === id
 	let scrollY = useScrollPosition()
 	// State ***************************************************************
 	const { isOpen, onToggle } = useDisclosure()
 
 	// Effect ***************************************************************
 
-
-	// Effect ***************************************************************
 
 	// Render
 	return (
@@ -82,12 +82,15 @@ export const NavigationMenu: React.FC<NavigationMenuProps> = ({
 								<Box key={i.toString()} as="li"
 									position={'relative'}
 									display={'flex'} justifyContent={'center'} >
-									<Link href={x.href} className={
-										`${scrollY > 0 ? '!text-black' : ''}`
-									}>
+									<Link href={x.hash}
+
+										className={
+											`${scrollY > 0 ? '!text-black' : ''}`
+										}
+									>
 										{x.name}
 									</Link>
-									{inHef(x.href) && <Box bg={scrollY > 0 && inHef(x.href)
+									{inHash(x.hash) && <Box bg={scrollY > 0 && inHash(x.hash)
 										? 'black' : 'white'}
 										position={'absolute'}
 										bottom={-2.5}
@@ -142,13 +145,14 @@ export const NavigationMenu: React.FC<NavigationMenuProps> = ({
 									flex={'row'} alignItems={'center'} gap={2}
 								>
 									<Link
-										pos={'relative'} href={x.href} className={
-											`${`${inHef(x.href) ? '' : '!text-black'}`
+
+										pos={'relative'} href={x.hash} className={
+											`${`${inHash(x.hash) ? '' : '!text-black'}`
 											}`
 										}
 										display={"flex"} alignItems={'center'}
 									>
-										{inHef(x.href) && <Box bg={'white'}
+										{inHash(x.hash) && <Box bg={'white'}
 											width={1.5} h={1.5} rounded={'full'}
 											pos={'absolute'} left={-5}
 										/>}
