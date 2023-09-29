@@ -8,12 +8,15 @@ import { Container, Image, Link, Stack, Text } from '@chakra-ui/react';
 interface SectionCTAProps extends HTMLAttributes<HTMLDivElement> { }
 
 const SectionCTA: React.FC<SectionCTAProps> = ({ }) => {
-  return <SectionBgVideo>
-    <Container h={'full'} display={'flex'}
+  return <SectionBgVideo className='!min-h-min !h-min' >
+    <Container minH={'min'} h={'min'} display={'flex'}
       justifyContent={'center'} alignItems={'center'}
+      pos={'relative'}
     >
+      {/* Card */}
       <Stack w={'100%'} h={['min']}
         bg={'whiteAlpha.500'}
+        m={'auto'}
         position={'relative'} zIndex={1}
         rounded={'lg'}
         className={`backdrop-blur-sm backdrop-filter`}
@@ -57,8 +60,8 @@ const SectionCTA: React.FC<SectionCTAProps> = ({ }) => {
             Visit
           </Link>
         </Stack>
-
       </Stack>
+      {/* Card - end*/}
     </Container>
   </SectionBgVideo>;
 }
