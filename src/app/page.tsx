@@ -6,10 +6,7 @@ import ProjectsSection from "@/components/Sections/ProjectsSection";
 import SectionCTA from "@/components/Sections/SectionCTA";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: 'Profile | Rafael Diniz;',
-  description: 'Full stack developer in Javascript and Typescript. Over 3 years of developer'
-}
+
 
 export default async function Home() {
   // Data

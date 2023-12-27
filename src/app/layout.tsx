@@ -5,6 +5,7 @@ import '../styles/globals.css'
 // Fonts
 import { Fira_Code } from 'next/font/google'
 import Body from '@/components/Atom/Body'
+import { headers } from 'next/headers'
 const fira = Fira_Code({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
@@ -13,11 +14,14 @@ const fira = Fira_Code({
   fallback: ['--font-fira']
 })
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | Rafael Diniz;',
-    default: 'Rafael Diniz;',
-  },
+export const generateMetadata = (): Metadata => {
+
+  return {
+    title: {
+      template: `%s | Rafael Diniz;`,
+      default: `CodeArea | Portifolio;`,
+    }
+  }
 }
 
 export default function RootLayout({
