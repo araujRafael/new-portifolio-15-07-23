@@ -78,6 +78,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ titleHeading, project
                       {
                         tags?.map((badge, idx) => (
                           <Badge
+                            key={idx}
                             shadow={'md'} color={'gray.700'}
                             bg={'primary.900'} rounded={'md'}>
                             {badge}
