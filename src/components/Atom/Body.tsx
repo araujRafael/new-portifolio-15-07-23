@@ -1,8 +1,6 @@
 'use client'
 import React, { HTMLAttributes } from 'react';
 
-// import { Container } from './styles';
-
 interface BodyProps extends HTMLAttributes<HTMLBodyElement> {
   font: any
 }

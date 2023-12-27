@@ -20,6 +20,8 @@ export interface DataAirtableMyStack {
 export interface DataAirtableProjects {
   fields: {
     title: string
+    description?: string
+    tags?: string[]
     url: string
     repo:string
     created_at: string

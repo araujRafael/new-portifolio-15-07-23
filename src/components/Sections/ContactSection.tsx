@@ -10,8 +10,8 @@ interface ContactSectionProps extends HTMLAttributes<HTMLDivElement> { }
 
 const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
   return <Section id={id}>
-    <Container>
-      <Text mb={8}
+    <Container gap={0}>
+      <Text
         fontSize={[26, 42]} fontWeight={'semibold'}
       >
         Contact me

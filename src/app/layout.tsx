@@ -5,7 +5,6 @@ import '../styles/globals.css'
 // Fonts
 import { Fira_Code } from 'next/font/google'
 import Body from '@/components/Atom/Body'
-import Html from '@/components/Atom/Html'
 const fira = Fira_Code({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
@@ -27,12 +26,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <Html >
+    <html lang='en-US' >
       <Body font={fira} >
         <Providers>
           {children}
         </Providers>
       </Body>
-    </Html>
+    </html>
   )
 }

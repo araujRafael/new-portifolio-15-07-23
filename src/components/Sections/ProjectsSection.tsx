@@ -1,21 +1,24 @@
 'use client'
 import React, { HTMLAttributes } from 'react';
-import { Box, Button, Container, Icon, Link, Stack, Text } from '@chakra-ui/react';
+import { Badge, Box, Button, Container, HStack, Icon, Link, Stack, Text } from '@chakra-ui/react';
 import moment from 'moment';
 import { DataAirtableProjects } from '@/@types/airtable';
 import Section from '../Atom/Section';
 import SwiperLoopCards from '../Molecules/SwiperLoopCards';
 import { Image } from '@chakra-ui/react';
 import { BiLogoGithub } from 'react-icons/bi';
+import { FaEye } from "react-icons/fa";
+
 // 
 
 // import { Container } from './styles';
 
 interface ProjectsSectionProps extends HTMLAttributes<HTMLDivElement> {
+  titleHeading: string
   projects: DataAirtableProjects[] | null | undefined
 }
 
-const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, id }) => {
+const ProjectsSection: React.FC<ProjectsSectionProps> = ({ titleHeading, projects, id }) => {
   return <Section id={id}
     className='!h-min'
   >
@@ -25,13 +28,13 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, id }) => {
       <Text mb={8}
         fontSize={[26, 42]} fontWeight={'semibold'}
       >
-        Projects
+        {titleHeading}
       </Text>
       <Stack h={'min'} w={'full'} flexDir={'row'}>
         <SwiperLoopCards
           className=''
           data={projects}
-          renderItems={({ fields: { image, title, url, repo, created_at } }) => (
+          renderItems={({ fields: { image, title, description, tags, url, repo, created_at } }) => (
             <Stack>
               <Image
                 rounded={'md'}
@@ -46,7 +49,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, id }) => {
               {/* GlassMorph */}
               <Stack
                 overflow={'hidden'}
-                w={'full'} h={'45%'}
+                w={'full'} h={'min'}
                 bg={'whiteAlpha.700'}
                 position={'absolute'}
                 bottom={0}
@@ -65,6 +68,23 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, id }) => {
                     >
                       {title}
                     </Text>
+                    <Text
+                      fontSize={12} color={'blackAlpha.800'}
+                      lineHeight={'6'}
+                    >
+                      {description}
+                    </Text>
+                    <HStack flexWrap={'wrap'}>
+                      {
+                        tags?.map((badge, idx) => (
+                          <Badge
+                            shadow={'md'} color={'gray.700'}
+                            bg={'primary.900'} rounded={'md'}>
+                            {badge}
+                          </Badge>
+                        ))
+                      }
+                    </HStack>
                     <Text
                       lineHeight={'3'}
                       fontSize={12}
@@ -106,7 +126,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, id }) => {
                       alignItems={'center'}
                       rounded={'md'}
                     >
-                      View Project
+                      <FaEye />
+                      View
                     </Link>
                   </Stack>
                 </Stack>

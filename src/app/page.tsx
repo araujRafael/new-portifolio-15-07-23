@@ -14,7 +14,8 @@ export const metadata: Metadata = {
 export default async function Home() {
   // Data
   const myStack = await getAirTableData<DataAirtableMyStack>('my stack')
-  const projects = await getAirTableData<DataAirtableProjects>('projects')
+  const projects = await getAirTableData<DataAirtableProjects>('projects-demo')
+  const projectsFrondEnd = await getAirTableData<DataAirtableProjects>('projects-frontend')
 
   // hook
 
@@ -22,7 +23,8 @@ export default async function Home() {
     <>
       <HeroSection myStack={myStack} id="hero" />
       <SectionCTA id="cta" />
-      <ProjectsSection projects={projects} id="projects" />
+      <ProjectsSection titleHeading="Projects Frontend" projects={projectsFrondEnd} id="projects" />
+      <ProjectsSection titleHeading="Demo Components" projects={projects} id="projects" />
       <ContactSection id="contact" />
     </>
   )

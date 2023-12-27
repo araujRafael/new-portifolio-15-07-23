@@ -12,8 +12,33 @@ export default function FormContact() {
     <form
       action={`https://formsubmit.co/${MY_EMAIL}`}
       method="post"
-      className="min-w-[280px] w-full flex flex-col gap-2"
+      className="!max-h-min !h-min min-w-[280px] w-full flex flex-col gap-2"
     >
+      {/*  visible */}
+      <InputLabel
+        title="Name"
+        name="name"
+        type="text"
+        isRequired
+      />
+      <InputLabel
+        title="Email"
+        name="email"
+        type="email"
+        isRequired
+      />
+      <TextArea
+        title="Message"
+        name="message"
+        cols={30} rows={5}
+        isRequired
+      />
+      <Button
+        variant={'solid'}
+        type="submit"
+      >
+        Send
+      </Button>
       {/* hidden */}
       {/* <InputLabel
       type="hidden"
@@ -45,31 +70,6 @@ export default function FormContact() {
         type="hidden"
         value={'Thank you for your message, I will get back to you shortly.'}
       />
-      {/*  visible */}
-      <InputLabel
-        title="Name"
-        name="name"
-        type="text"
-        isRequired
-      />
-      <InputLabel
-        title="Email"
-        name="email"
-        type="email"
-        isRequired
-      />
-      <TextArea
-        title="Message"
-        name="message"
-        cols={30} rows={5}
-        isRequired
-      />
-      <Button
-        variant={'solid'}
-        type="submit"
-      >
-        Send
-      </Button>
     </form>
   )
 }

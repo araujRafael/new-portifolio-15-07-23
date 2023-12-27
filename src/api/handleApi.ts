@@ -1,15 +1,15 @@
-
+'use server'
 export interface RecordAirtable<T> {
     records: T[]
 }
-type TableName =  'my stack' | 'projects'
+type TableName =  'my stack' | 'projects-demo'|'projects-frontend'
 export async function getAirTableData<T=unknown>
   (tableName:TableName):
     Promise<T[]| undefined | null> 
 {
-    const baseId = 'appvEbOiUVWDBU3tx'
+    const baseId = process.env.AIRTABLE_BASE_ID!
     const tableIdOrName = tableName
-    const token = process.env.AIRTABLE_SECRET_API_TOKEN
+    const token = process.env.AIRTABLE_SECRET_API_TOKEN!
     try {
         const data = await fetch(
           `https://api.airtable.com/v0/${baseId}/${tableIdOrName}`
