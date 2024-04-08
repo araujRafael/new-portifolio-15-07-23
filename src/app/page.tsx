@@ -1,9 +1,12 @@
 import { DataAirtableMyStack, DataAirtableProjects } from "@/@types/airtable";
 import { getAirTableData } from "@/api/handleApi";
+import SectionGridProjects from "@/components/Organisms/SectionGridProjects";
 import ContactSection from "@/components/Sections/ContactSection";
+import GridLayoutProjects from "@/components/Sections/GridLayoutProjects";
 import HeroSection from "@/components/Sections/HeroSection";
 import ProjectsSection from "@/components/Sections/ProjectsSection";
 import SectionCTA from "@/components/Sections/SectionCTA";
+import { Image, Stack } from "@chakra-ui/react";
 import { Metadata } from "next";
 
 
@@ -20,8 +23,16 @@ export default async function Home() {
     <>
       <HeroSection myStack={myStack} id="hero" />
       <SectionCTA id="cta" />
-      <ProjectsSection titleHeading="Projects Frontend" projects={projectsFrondEnd} id="projects" />
-      <ProjectsSection titleHeading="Demo Components" projects={projects} id="projects" />
+      <SectionGridProjects
+        data={projects ?? []}
+        titleSection="Demo"
+        sectionId="demo"
+      />
+      <SectionGridProjects
+        data={projectsFrondEnd ?? []}
+        titleSection="Projects"
+        sectionId="projects"
+      />
       <ContactSection id="contact" />
     </>
   )

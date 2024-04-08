@@ -12,7 +12,7 @@ const Body: React.FC<BodyProps> = ({ font, children }) => {
 
   // Render ***************************************************************
   return <body
-    className={`bg-black text-white overflow-y-auto
+    className={`bg-white text-slate-700 overflow-y-auto
     ${font.variable} 
   `}
   >

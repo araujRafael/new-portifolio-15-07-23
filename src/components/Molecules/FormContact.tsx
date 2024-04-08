@@ -34,7 +34,7 @@ export default function FormContact() {
         isRequired
       />
       <Button
-        variant={'solid'}
+        variant={'outline'}
         type="submit"
       >
         Send

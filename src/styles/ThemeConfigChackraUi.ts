@@ -1,59 +1,71 @@
 import { defineStyleConfig, extendTheme } from '@chakra-ui/react'
 
 const Container = defineStyleConfig({
-  baseStyle:{
-    width:'100%',
-    maxWidth:'920px',
+  baseStyle: {
+    width: '100%',
+    maxWidth: '1280px',
   }
 })
 const Link = defineStyleConfig({
-  baseStyle:{
-    _active:{
-      textDecoration:'none',
+  baseStyle: {
+    _active: {
+      textDecoration: 'none',
     },
-    _hover:{
-      textDecoration:'none',
+    _hover: {
+      textDecoration: 'none',
     }
 
   },
-  variants:{
-    outline:{
-      textDecoration:'none',
-      borderWidth:'1px',
-      borderColor:'black',
-      px:'8',
-      py:'1',
-      rounded:'md',
+  variants: {
+    outline: {
+      textDecoration: 'none',
+      borderWidth: '1px',
+      borderColor: 'black',
+      px: '8',
+      py: '1',
+      rounded: 'md',
     }
   }
 })
 const Button = defineStyleConfig({
-  baseStyle:{
-    width:'100%',
+  baseStyle: {
+    width: '100%',
   },
-  variants:{
-    outline:{
-      color:'white',
-      _hover:{
-        color:'black',
+  variants: {
+    outline: {
+      color: 'white',
+      bg: 'primary.900 !important',
+      _hover: {
+        color: 'black',
+        bg: 'transparent !important'
       }
     },
-    solid:{
-      background:'white !important',
-      color:'black',
-      _hover:{
-        background:'whiteAlpha.500 !important',
-        color:'black',
+    solid: {
+      background: 'white !important',
+      color: 'black',
+      _hover: {
+        background: 'whiteAlpha.500 !important',
+        color: 'black ',
       }
     }
   }
 })
+const Heading = defineStyleConfig({
+  baseStyle: {
+    display: "flex",
+    justifyContent: "center !important",
+  },
+  variants: {
+
+  }
+})
 
 const themeConfig = {
-  components:{
+  components: {
     Container,
     Link,
-    Button
+    Button,
+    Heading
   },
   colors: {
     primary: {
@@ -65,7 +77,7 @@ const themeConfig = {
       700: `var(--secondary-700)`,
     },
   },
-  fonts : {
+  fonts: {
     heading: `var(--font-fira)`,
     body: `var(--font-fira)`,
   }

@@ -32,7 +32,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ titleHeading, project
       </Text>
       <Stack h={'min'} w={'full'} flexDir={'row'}>
         <SwiperLoopCards
-          className=''
           data={projects}
           renderItems={({ fields: { image, title, description, tags, url, repo, created_at } }) => (
             <Stack>
@@ -56,7 +55,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ titleHeading, project
                 rounded={'md'}
                 borderWidth={1}
                 borderColor={'blackAlpha.700'}
-                className={`backdrop-blur-sm backdrop-filter shadow-md`}
+                className={`backdrop-blur-sm backdrop-filter `}
                 px={4} py={2}
               >
                 {/* GlassMorph */}

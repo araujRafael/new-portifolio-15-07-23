@@ -29,6 +29,9 @@ function SwiperLoopCards<T extends unknown>(
     //   pauseOnMouseEnter: false,
     //   stopOnLastSlide: false,
     // }}
+    style={{
+      padding: '2rem'
+    }}
     loop
     spaceBetween={10}
     slidesPerView={1.1}
